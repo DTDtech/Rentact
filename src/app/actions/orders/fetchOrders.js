@@ -1,0 +1,22 @@
+'use server'
+
+import database from "@/app/config/db_config";
+
+const FetchOrders = async () => {
+    try {
+        if (database.collection("orders").countDocuments({}) === 0) {
+            console.log("No documents found");
+        }
+
+        const orders = await database.collection("orders").find().toArray();
+        for (const i in orders) {
+            orders[i]._id = orders[i]._id.toHexString();
+        }
+        return orders;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+export default FetchOrders;
