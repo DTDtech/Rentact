@@ -6,7 +6,6 @@ import { unstable_noStore as noStore } from 'next/cache'
 const FetchInventoryItems = async () => {
     noStore();
     try {
-
         if (database.collection("inventory").countDocuments({}) === 0) {
             console.log("No documents found");
         }

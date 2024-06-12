@@ -14,7 +14,7 @@ const AddInventoryItemForm = () => {
                 <input type="text" id="name" name="name" className="w-full rounded-md border-2 border-info py-1 px-2 text-base-content focus:outline-none" required />
             </div>
             <div className="space-y-2">
-                <label htmlFor="price" className="text-base-content font-medium"> Giá: </label>
+                <label htmlFor="price" className="text-base-content font-medium"> Giá thuê: </label>
                 <input type="number" id="price" name="price" className="w-full rounded-md border-2 border-info py-1 px-2 text-base-content focus:outline-none" required />
             </div>
             <div className="space-y-2">

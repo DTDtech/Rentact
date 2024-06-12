@@ -1,6 +1,6 @@
 'use server'
 
-import CreateOrderForm from "../container/order/create_order_page/create_order_form";
+import CreateOrderForm from "../container/order/create_order_form";
 import FetchInventoryItems from "../actions/inventory/fetchInventoryItems";
 
 const CreateOrderPage = async () => {

@@ -1,16 +1,23 @@
 'use server'
 
-import Image from "next/image";
 import FetchOrders from "./actions/orders/fetchOrders";
-import OrdersSection from "./container/order/orders_page/orders_section";
+import OrdersSection from "./container/order/orders_section";
+import CreateOrderButton from "./container/order/create_order_button";
+import { Suspense } from "react";
+import OrderPageLoadingSkeleton from "./loading";
 
 const Home = async () => {
 
-  const data = await FetchOrders();
+	const data = await FetchOrders();
 
-  return (
-    <OrdersSection orders={data} />
-  )
+	return (
+		<>
+			<CreateOrderButton />
+			<Suspense fallback={<OrderPageLoadingSkeleton />}>
+				<OrdersSection orders={data} />
+			</Suspense>
+		</>
+	)
 }
 
 export default Home;
