@@ -5,7 +5,6 @@ import { ObjectId } from 'mongodb'
 import { redirect } from "next/navigation";
 
 const UpdateOrderStatus = async (orderId, orderStatus) => {
-
     try {
         const filter = { _id: ObjectId.createFromHexString(orderId) };
 

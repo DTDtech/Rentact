@@ -1,8 +1,10 @@
 'use server'
 
 import database from "@/app/config/db_config";
+import { unstable_noStore as noStore } from 'next/cache'
 
 const FetchInventoryItems = async () => {
+    noStore();
     try {
 
         if (database.collection("inventory").countDocuments({}) === 0) {
