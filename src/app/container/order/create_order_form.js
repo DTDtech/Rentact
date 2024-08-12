@@ -34,6 +34,12 @@ const CreateOrderForm = ({ items }) => {
 
     return (
         <form className="w-full h-full rounded-md bg-base-100 p-3 space-y-4" action={CreateOrder}>
+
+            <div className="space-y-2">
+                <label htmlFor="name" className="text-base-content font-medium"> Tên khách hàng: </label>
+                <input type="text" id="name" name="name" className="w-full rounded-md border-2 border-info py-1 px-2 text-base-content focus:outline-none" required />
+            </div>
+
             <div className="space-y-2 bg-gray-200 rounded-md p-2">
                 <label htmlFor="items" className="text-base-content font-medium"> Thiết bị thuê: </label>
 
@@ -72,10 +78,20 @@ const CreateOrderForm = ({ items }) => {
             </div>
 
             <div className="space-y-2">
+                <label htmlFor="paid" className="text-base-content font-medium"> Đã thanh toán: </label>
+                <input type="number" id="paid" name="paid" className="w-full rounded-md border-2 border-info py-1 px-2 text-base-content focus:outline-none" required />
+            </div>
+
+            <div className="space-y-2">
+                <label htmlFor="debt" className="text-base-content font-medium"> Còn nợ: </label>
+                <input type="number" id="debt" name="debt" className="w-full rounded-md border-2 border-info py-1 px-2 text-base-content focus:outline-none" required />
+            </div>
+
+            <div className="space-y-2">
                 <label htmlFor="status" className="text-base-content font-medium"> Trạng thái: </label>
                 <select id="status" name="status" className="select select-bordered w-full rounded-md border-2 border-info py-1 px-2 bg-white text-base-content focus:outline-none" required >
-                    <option selected> Chưa hoàn thành </option>
-                    <option> Đã hoàn thành </option>
+                    <option value="incomplete" selected> Chưa hoàn thành </option>
+                    <option value="completed"> Đã hoàn thành </option>
                 </select>
             </div>
 
